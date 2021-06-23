@@ -12,7 +12,6 @@ import { BookAddComponent } from './book/book-add/book-add.component';
 import { bookFeatureKey,reducer } from './book/store/reducer/book.reducer';
 import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FieldErrorDisplayComponent } from './field-error-display/field-error-display.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 
@@ -23,7 +22,6 @@ import { FormsModule } from '@angular/forms';
     BookViewComponent,
     BookAddComponent,
     HeaderComponent,
-    FieldErrorDisplayComponent,
     HomeComponent
   ],
   imports: [

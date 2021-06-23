@@ -19,6 +19,7 @@ export class BookServiceService {
 
   index = null;
 
+  //data transfer b/w component
   updateBook(newBook: Book, i) {
     this.index = i;
     this.book.next(newBook);

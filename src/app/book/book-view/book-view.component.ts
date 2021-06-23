@@ -27,17 +27,12 @@ export class BookViewComponent implements OnInit {
     this.bookService.updateBook(book,i);
   }
 
-  // searchBook(matchPattern:string){
-  //   console.log(matchPattern);
-  //   this.books$=this.store.pipe(select(filterBooks(matchPattern.toLowerCase())));
-  //   if(matchPattern==''){
-  //     console.log(document.getElementById("searchInput"));
-  //   }
-  // }
+  //search for books
   searchBook(){
-    console.log(this.searchVal)
     this.books$=this.store.pipe(select(filterBooks(this.searchVal.toLowerCase())));
   }
+
+  //clear a search
   clear(){
     this.searchVal = '';
     this.searchBook()

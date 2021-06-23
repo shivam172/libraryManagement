@@ -11,31 +11,7 @@ export interface BookState {
   books: Book[];
 }
 
-export const initialState: BookState = {books:new BookServiceService().products};
-// {
-//   books: [{
-//     "id": 0,
-//     "name": "Eloquent JavaScript, Second Edition",
-//     "author": "Marijn Haverbeke",
-//     "count": 472,
-//     "description": "JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications."
-//   },
-//   {
-//     "id": 1,
-//     "name": "Learning JavaScript Design Patterns",
-//     "author": "Addy Osmani",
-//     "count": 254,
-//     "description": "With Learning JavaScript Design Patterns, you'll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-date with the latest best practices, this book is for you."
-//   },
-//   {
-//     "id": 2,
-//     "name": "Speaking JavaScript",
-//     "author": "Axel Rauschmayer",
-//     "count": 460,
-//     "description": "Like it or not, JavaScript is everywhere these days-from browser to server to mobile-and now you, too, need to learn the language or dive deeper than you have. This concise book guides you into and through JavaScript, written by a veteran programmer who once found himself in the same position."
-//   }]
-
-// };
+export const initialState: BookState = { books: new BookServiceService().products };
 
 
 
@@ -45,27 +21,30 @@ export const initialState: BookState = {books:new BookServiceService().products}
 export const bookReducer = createReducer(
   initialState,
   on(BookActions.addBook,
+    //Adding a new book in store
     (state: BookState, { book }) =>
     ({
       ...state,
       books: [...state.books, book]
     })),
   on(BookActions.deleteBook,
+    ////Delete a book in store by using bookId as reference. 
     (state: BookState, { payload }) =>
     ({
       ...state,
       books: state.books.filter((item) => item.id !== payload)
     })),
   on(BookActions.editBook,
+    //Update a book's properties in store by using bookId as reference. 
     (state: BookState, { book }) =>
     ({
       ...state,
       books: state.books.map(
-        (current) => current.id === book.id ? {...current, description: book.description,name:book.name, author:book.author, count:book.count }
-                                : current
+        (current) => current.id === book.id ? { ...current, description: book.description, name: book.name, author: book.author, count: book.count }
+          : current
       )
     })),
-    );
+);
 
 
 

@@ -8,7 +8,6 @@
 .left {
     left: 0;
     width: 70%;
-    /* background-color: #111; */
 }
 
 .right {
@@ -31,13 +30,10 @@
 }
 @media only screen and (max-width: 700px) {
     .left {
-        /* left: 0; */
         width: 100%;
-        /* background-color: #111; */
     }
     
     .right {
-        /* right: 0; */
         width: 100%;
         background-color:#53a318;;
     }

@@ -50,15 +50,11 @@ tbody tr:hover {
     cursor: pointer;
 }
 
-.rows {
-    /* overflow-y: auto; */
-    /* height: 500px !important; */
-}
 
 table tbody {
     display: block;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 table thead, table tbody tr {
@@ -146,4 +142,11 @@ form.example {
 .button-div {
     padding-left: 0;
     padding-right: 0;
+}
+
+.noData {
+    text-align: center;
+    padding-top: 19%;
+    font-size: x-large;
+    color: darkgrey;
 }

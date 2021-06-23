@@ -16,6 +16,7 @@
       </tr>
     </thead>
     <tbody class="rows" id="style-1">
+      <div class="noData" *ngIf="(books$ | async)?.length==0">NO BOOK IN STOCK <br> Add a book?</div>
       <tr *ngFor="let book of books$ | async; let i=index " (click)="editBook(book,i)">
         <td>{{book.name}}</td>
         <td>{{book.author}}</td>

@@ -1,16 +1,3 @@
-/* header{
-    width: 100vw;
-    height: 6vh;
-    background-color: #53a318;
-    align-content: center;
-    text-align: center;
-    padding-top: 0.5%;
-}
-.head{
-    color: white;
-    font-size: 2.5vw;
-} */
-
 .header {
     overflow: hidden;
     background-color: white;
@@ -33,16 +20,6 @@
     font-weight: bold;
     color: #53a318;
 }
-
-/* .header a:hover {
-    background-color: #53a318;
-    color: black;
-} */
-
-/* .header a.active {
-    background-color: dodgerblue;
-    color: white;
-} */
 
 .header-right {
     float: right;

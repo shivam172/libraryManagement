@@ -21,14 +21,12 @@ export class BookAddComponent implements OnInit, DoCheck {
   bookId = null;
   isEditing = false;
 
-
-
-
   constructor(private store: Store<BookState>, private formBuilder: FormBuilder, private bookService: BookServiceService) {
     bookService = new BookServiceService();
 
   }
 
+  //Add a new book
   addBook(): void {
     const book = new Book();
     book.id = uuid.v4();
@@ -43,6 +41,8 @@ export class BookAddComponent implements OnInit, DoCheck {
   ngOnInit(): void {
 
   }
+
+
   ngDoCheck(): void {
     this.bookService.bookValue.subscribe(book => {
       this.HeadingText = "Edit book information";
@@ -54,6 +54,8 @@ export class BookAddComponent implements OnInit, DoCheck {
       this.isEditing = true;
     })
   }
+
+   //Update a book
   editBook() {
     const book1 = new Book();
     book1.id = this.bookId;
@@ -64,10 +66,13 @@ export class BookAddComponent implements OnInit, DoCheck {
     this.store.dispatch(editBook(book1));
     this.resetBook();
   }
+
+   //Delete a book
   removeBook() {
     this.store.dispatch(deleteBook(this.bookId));
     this.resetBook();
   }
+  
   resetBook() {
     this.HeadingText = "Expand you Libarary, Add a Book";
     this.bookName = "";
