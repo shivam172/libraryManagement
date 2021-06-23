@@ -1,0 +1,48 @@
+.split {
+    height: 100%;
+    position: fixed;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left {
+    left: 0;
+    width: 70%;
+    /* background-color: #111; */
+}
+
+.right {
+    right: 0;
+    width: 30%;
+    background-color:#53a318;;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+}
+@media only screen and (max-width: 700px) {
+    .left {
+        /* left: 0; */
+        width: 100%;
+        /* background-color: #111; */
+    }
+    
+    .right {
+        /* right: 0; */
+        width: 100%;
+        background-color:#53a318;;
+    }
+    .split {
+        position: inherit;
+        overflow-x: hidden;
+    }
+  }

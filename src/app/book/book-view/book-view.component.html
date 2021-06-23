@@ -1,0 +1,27 @@
+<p class="heading">List of Books</p>
+<form class="example" #form>
+  <input #search id="searchInput" class="form-control" type="text" placeholder="Search.." name="search"
+    [(ngModel)]="searchVal" #val>
+  <button type="submit" (click)="searchBook()"><i class="fa fa-search"></i></button>
+  <button type="submit" (click)="clear()"><i class="fa fa-times"></i></button>
+</form>
+<div class="tableDiv">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody class="rows" id="style-1">
+      <tr *ngFor="let book of books$ | async; let i=index " (click)="editBook(book,i)">
+        <td>{{book.name}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.description}}</td>
+        <td>{{book.count}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

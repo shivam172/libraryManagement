@@ -1,0 +1,73 @@
+<div class = "heading">
+<h2>{{HeadingText}}</h2>
+<hr>
+</div>
+<div class="container">
+    <form name="angForm">
+        <div class="row">
+            <div class="col-25">
+                <label>Book Title</label>
+            </div>
+            <div class="col-75">
+                <input class="form-control" type="text" [(ngModel)]="bookName" name="bookName" id="bookName"
+                    placeholder="Book title.." required>
+                <!-- <div *ngIf="bookNames.invalid && (bookName.dirty || bookName.touched)" class="alert">
+                    <div *ngIf="bookname.errors?.required">
+                        Book title is required.
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Author Name</label>
+            </div>
+            <div class="col-75">
+                <input class="form-control" name="authorName" [(ngModel)]="authorName" type="text" id="authorName"
+                    placeholder="Author name..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Count</label>
+            </div>
+            <div class="col-75">
+                <input class="form-control" name="bookCount" [(ngModel)]="count" type="text" id="bookCount"
+                    placeholder="Number of books..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Subject</label>
+            </div>
+            <div class="col-75">
+                <textarea class="form-control" name="description" [(ngModel)]="description" id="description"
+                    placeholder="Write something.." style="height:200px"></textarea>
+            </div>
+        </div>
+
+        <div class="container button-div">
+            <div class="row">
+                <div class="col-33">
+                    <div *ngIf=isEditing>
+                        <input type="submit" (click)="resetBook()" value="Reset">
+                    </div>
+                </div>
+                <div class="col-33">
+                    <div *ngIf=isEditing>
+                        <input type="submit" (click)="removeBook()" value="Delete">
+                    </div>
+                </div>
+                <div class="col-33">
+                    <div *ngIf=!isEditing>
+                        <input type="submit" (click)="addBook()" value="Submit">
+                    </div>
+                    <div *ngIf=isEditing>
+                        <input type="submit" (click)="editBook()" value="Save">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
